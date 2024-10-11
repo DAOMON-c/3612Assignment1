@@ -1,4 +1,4 @@
-# comp3612-Assignment1
+# Assignment1
 I tried to get the homepage to look as close as possible to the one in the specs, which required me to use different font sizes. 
 For the like, map-marker, and comment icons, I used them from the font awesome library.
 
