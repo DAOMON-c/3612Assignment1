@@ -38,7 +38,7 @@ footer .links {
     flex-direction: row;
 }
 
-footer>p {
+footer>* {
     font-size: var(--font-size-medium);
 }
 
@@ -131,8 +131,10 @@ header nav ul {
 header .logo {
     background-image: url(./images/logo.png);
     background-repeat: no-repeat;
-    min-width: 80px;
-    min-height: 80px;
+    justify-content: center;
+    background-position: center;
+    width: 80px;
+    height: 80px;
 }
 
 .hero {
