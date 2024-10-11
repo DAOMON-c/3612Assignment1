@@ -1,0 +1,364 @@
+:root {
+    --color-link-default: #51279B;
+    --color-link-hover: #8662C7;
+    --color-button-default: #51279B;
+    --color-button-hover: #8662C7;
+    --color-button-text: #F5F7FA;
+    --color-card-default: white;
+    --color-card-hover: #ECEDD8;
+    --color-text-light: #F5F7FA;
+    --color-text-dark: #3E4C59;
+    --color-border: #3E4C59;
+    --color-default-background: #ECEDEF;
+    --color-footer-background: #ECEDD8;
+    --font-size-small: 10px;
+    --font-size-medium: 12px;
+    --font-size-large: 14px;
+
+    /*These are the sizes that got my home looking closer to the one in the Assignment specs*/
+    --font-size-larger: 20px; /*Header Links and Button*/
+    --font-size-largest: 32px; /*CTA in home*/
+    --font-size-Large: 60px; /*Title in home*/
+
+    --font-weight-normal: 400;
+    --font-weight-bold: 600;
+    --font-weight-bolder: 800;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    row-gap: 0.5em;
+    background-color: var(--color-footer-background);
+}
+
+footer .links {
+    display: flex;
+    flex-direction: row;
+}
+
+footer>p {
+    font-size: var(--font-size-medium);
+}
+
+footer>.links {
+    font-size: var(--font-size-medium);
+}
+
+footer span,
+footer a {
+    font-weight: var(--font-weight-bold);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: var(--font-weight-normal);
+    background-color: var(--color-default-background);
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.header-main-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header-main-container.index {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/florence.jpg);
+}
+
+.header-main-container.first {
+    background-image: url(./images/travel-1-background.png);
+}
+
+.header-main-container.second {
+    background-image: url(./images/travel-2-background.png);
+}
+
+.header-main-container.third {
+    background-image: url(./images/travel-3-background.png);
+}
+
+footer a:link,
+nav a:link {
+    color: var(--color-link-default);
+}
+
+footer a:hover,
+nav a:hover {
+    color: var(--color-link-hover);
+}
+
+header,
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2.8em;
+}
+
+header {
+    align-items: center;
+    font-size: var(--font-size-larger);
+    font-weight: 600;
+    height: auto;
+    padding: 0.5em;
+    gap: 2.6em;
+}
+
+header nav ul {
+    flex-wrap: wrap;
+}
+
+header .logo {
+    background-image: url(./images/logo.png);
+    background-repeat: no-repeat;
+    min-width: 80px;
+    min-height: 80px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    padding: 6em 8.7em 15em 8.7em;
+}
+
+.hero * {
+    color: var(--color-text-light);
+}
+
+.hero h1 {
+    font-size: var(--font-size-Large);
+    font-weight: var(--font-weight-bolder);
+    margin-bottom: 0.4em;
+}
+
+.hero .CTA {
+    font-size: var(--font-size-largest);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: 0.5em;
+}
+
+.button a:link {
+    display: inline-block;
+    font-size: var(--font-size-larger);
+    background-color: var(--color-button-default);
+    text-align: center;
+    padding: 1em;
+}
+
+.button a:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button.learn a {
+    color: var(--color-text-light);
+}
+
+.information *,
+.interactions .count {
+    color: var(--color-text-dark);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 1%;
+}
+
+/* got this "hack" to prevent the last div element from warping to the 
+next line from gpt, i just asked it why my div element was going to the next line, and 
+it told me the whitespace between the div elements was getting printed. It gave me 
+an aswer of putting comments between each div element, or setting font-size to 0.
+Since the question requires that I use a display of inline-block, I just accepted this was 
+the only way to do it, and just chose the later. */
+#cards {
+    grid-column: 1 / span 10;
+    grid-row: 1;
+    padding: 1%;
+    font-size: 0;
+    background-color: var(--color-image-background);
+}
+
+.card {
+    display: inline-block;
+    margin-right: 0.5%;
+    width: calc(33.33% - 1%/3);
+    border: 2px solid var(--color-border);
+    background-color: var(--color-card-default);
+    min-height: 100% !important;
+    max-height: 100% !important;
+}
+
+.card:last-child {
+    margin-right: 0;
+}
+
+.card:hover {
+    background-color: var(--color-card-hover);
+}
+
+/* wanted to give the image a hover effect, so i just changed the opacity. 
+I got the transition part from gpt*/
+.card:hover > img {
+    opacity: 80%;
+    transition: opacity 0.3s ease;
+}
+
+.card .information .title {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: 0.5em;
+}
+
+.card .information .excerpt {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: 1em;
+}
+
+.card .interactions {
+    font-size: var(--font-size-small);
+}
+
+.interactions {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 2% 2% 2% 2%;
+    gap: 3em;
+    border-top: 1px solid var(--color-border)
+}
+
+.interactions>span {
+    font-weight: var(--font-weight-bolder);
+}
+
+.likes .fa.fa-heart {
+    color: #F9033D
+}
+
+.comments .fa.fa-comment {
+    color: #0069fb;
+}
+
+.page {
+    margin: 0;
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    max-width: 100%;
+    max-height: 100%; 
+    padding: 1%;
+    gap: 1%;
+}
+
+.page>.image-container {
+    grid-row: 1 / span 7;
+    grid-column: 2 / span 5;
+    padding: 0.5%;
+    background-color: var(--color-default-background);
+    border: 2px solid var(--color-border);
+}
+
+.image-container>img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0.5%;
+}
+
+.information-container,
+.context {
+    display: flex;
+    flex-direction: column;
+}
+
+.page>.information-container {
+    grid-row: 1 / span 7;
+    grid-column: 7 / span 4;
+    background-color: white;
+    border: 1px solid var(--color-border);
+    max-height: 100%;
+}
+
+.context {
+    flex: 1;
+    max-height: 100%;
+    padding: 2% 2% 0 2%;
+}
+
+/*Played around with the description getting longer, and having a vertical scrolling*/
+.information {
+    flex: 1;        
+    overflow-y: auto;
+}
+
+.information * {
+    color: var(--color-text-dark);
+}
+
+.page .information .title {
+    font-size: var(--font-size-larger);
+    margin-bottom: 0.1em;
+}
+
+.information .location > span{
+    display: inline-block;
+    font-size: var(--font-size-large);
+    margin-bottom: 1em;
+}
+
+.location .fa.fa-map-marker {
+    color: red;
+}
+
+.information .excerpt {
+    font-size: var(--font-size-larger);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.5em;
+}
+
+.information .description>p {
+    font-size: var(--font-size-large);
+}
+
+.related>div {
+    background-color: var(--color-default-background);
+    border: 2px solid var(--color-border);
+    border-radius: 3px;
+}
+
+.related {
+    grid-row: 8 / span 3;
+    grid-column: 2 / span 8;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: normal;
+    margin-bottom: 0.5%;
+    background-color: transparent;
+    gap: 1%;
+}
+
+.related>div>img {
+    object-fit: cover;
+    padding: 0.5%;
+}
